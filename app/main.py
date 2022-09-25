@@ -6,14 +6,6 @@ from app.routers import router
 
 # экземпляр класса FastApi
 
-# app = FastAPI()
-
-
-# @app.get("/")
-# def hello():
-#     return {"hello"}
-
-
 app = FastAPI(
     title="YourWorkouts",
     description=("Workouts tailored especially for you!"),

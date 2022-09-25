@@ -24,4 +24,11 @@ Packages installation
 
 .. code::
 
+    pip install poetry
     poetry install
+
+-- Start application:
+
+.. code::
+
+    uvicorn app.main:app --reload

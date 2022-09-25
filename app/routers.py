@@ -3,7 +3,7 @@ from typing import Optional
 
 from fastapi import APIRouter
 
-from app import contracts
+from app.models.user import User
 
 
 router = APIRouter()
@@ -11,7 +11,7 @@ router = APIRouter()
 
 @router.get("/")
 def read_root():  # noqa: D103
-    return {"Hello": "New User!"}
+    return "Hello, New User!"
 
 
 # path parameters
@@ -36,7 +36,7 @@ async def read_user(user_id: str, want_to_train: bool = True):
 
 
 @router.post("/users/")
-async def create_item(user: contracts.User):  # noqa: D103
+async def create_item(user: User):  # noqa: D103
     user_dict = user.dict()
 
     if user.training_preferences:
