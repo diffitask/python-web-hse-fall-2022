@@ -5,6 +5,7 @@ from fastapi import APIRouter
 
 from app import contracts
 
+
 router = APIRouter()
 
 
@@ -29,20 +30,6 @@ async def read_user(user_id: str, want_to_train: bool = True):
     if not want_to_train:
         return {"item_id": user_id, "desire to train": want_to_train}
     return {"item_id": user_id}
-
-
-# @router.get("/users/{user_id}/workouts/{workout_id}")
-# async def read_user_item(  # noqa: D103
-#     user_id: int, workout_id: str, q: Optional[str] = None, short: bool = False
-# ):
-#     workout_id = {"workout_id": workout_id, "user_id": user_id}
-#     if q:
-#         item.update({"q": q})
-#     if not short:
-#         item.update(
-#             {"description": "This user has these workouts"}
-#         )
-#     return item
 
 
 # request body
